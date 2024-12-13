@@ -12,6 +12,8 @@ connectDatabase();
 
 app.use("/api/auth", Route.authRoute);
 app.use("/api/user", Route.userRoute);
+app.use("/api/blogcategory", Route.blogCategoryRoute);
+app.use("/api/blog", Route.blogRoute);
 
 app.get("/", (req, res) => {
   res.send("FiveOnline");

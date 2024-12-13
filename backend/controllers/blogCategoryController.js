@@ -78,9 +78,10 @@ const deleteBlogCategory = async (req, res) => {
       return res.status(404).json({ message: "Category not found." });
     }
 
-    res
-      .status(200)
-      .json({ message: "Category deleted successfully.", deletedUser: user });
+    res.status(200).json({
+      message: "Category deleted successfully.",
+      deletedCategory: category,
+    });
   } catch (error) {
     res
       .status(500)

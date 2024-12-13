@@ -6,7 +6,7 @@ const authorizeRole = require("../middlewares/authorizeRole");
 const route = express.Router();
 
 route.post(
-  "/add",
+  "/",
   adminMiddleware,
   authorizeRole("admin"),
   userController.createUser
@@ -18,6 +18,6 @@ route.delete("/:id", userController.deleteUser);
 
 route.get("/:id", userController.getUser);
 
-route.get("/allusers", userController.getAllUsers);
+route.get("/", userController.getAllUsers);
 
 module.exports = route;
